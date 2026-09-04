@@ -3,13 +3,13 @@
 
 /* =========================================
    AXEN TECHNOLOGIES
-   Website v0.1
+   v0.1.1
 ========================================= */
 
 
-/* =========================
+/* =========================================
    ELEMENTS
-========================= */
+========================================= */
 
 const menuButton =
     document.getElementById(
@@ -43,9 +43,9 @@ const cartButton =
         "cartButton"
     );
 
-const closeCart =
+const cartBackdrop =
     document.getElementById(
-        "closeCart"
+        "cartBackdrop"
     );
 
 const cartDrawer =
@@ -53,14 +53,14 @@ const cartDrawer =
         "cartDrawer"
     );
 
-const drawerBackdrop =
+const closeCart =
     document.getElementById(
-        "drawerBackdrop"
+        "closeCart"
     );
 
-const shopFromCart =
+const cartShopButton =
     document.getElementById(
-        "shopFromCart"
+        "cartShopButton"
     );
 
 
@@ -91,9 +91,40 @@ const noticeOkay =
     );
 
 
-/* =========================
-   MOBILE NAVIGATION
-========================= */
+
+/* =========================================
+   IMPORTANT STARTUP RESET
+========================================= */
+
+/*
+    This guarantees the cart and popup
+    are CLOSED every time the page loads.
+*/
+
+noticeModal.hidden = true;
+
+cartBackdrop.hidden = true;
+
+cartDrawer.classList.remove(
+    "open"
+);
+
+cartDrawer.setAttribute(
+    "aria-hidden",
+    "true"
+);
+
+mobileNav.hidden = true;
+
+document.body.classList.remove(
+    "locked"
+);
+
+
+
+/* =========================================
+   MOBILE NAV
+========================================= */
 
 function closeMobileMenu() {
 
@@ -111,15 +142,17 @@ menuButton.addEventListener(
     "click",
     () => {
 
-        const willOpen =
+        const shouldOpen =
             mobileNav.hidden;
 
         mobileNav.hidden =
-            !willOpen;
+            !shouldOpen;
 
         menuButton.setAttribute(
             "aria-expanded",
-            String(willOpen)
+            String(
+                shouldOpen
+            )
         );
 
     }
@@ -140,9 +173,10 @@ mobileNav
     );
 
 
-/* =========================
+
+/* =========================================
    SEARCH
-========================= */
+========================================= */
 
 const searchableSections =
     Array.from(
@@ -151,17 +185,24 @@ const searchableSections =
         )
     )
     .map(
-        section => ({
-            element: section,
+        section => {
 
-            title:
-                section.dataset
-                    .searchTitle || "",
+            return {
 
-            keywords:
-                section.dataset
-                    .searchKeywords || ""
-        })
+                element:
+                    section,
+
+                title:
+                    section.dataset
+                        .searchTitle || "",
+
+                keywords:
+                    section.dataset
+                        .searchKeywords || ""
+
+            };
+
+        }
     );
 
 
@@ -172,11 +213,11 @@ function hideSearchResults() {
 }
 
 
-function showSearchResults(
+function renderSearchResults(
     query
 ) {
 
-    const cleanedQuery =
+    const cleaned =
         query
             .trim()
             .toLowerCase();
@@ -185,7 +226,7 @@ function showSearchResults(
     searchResults.innerHTML = "";
 
 
-    if (!cleanedQuery) {
+    if (!cleaned) {
 
         hideSearchResults();
 
@@ -199,7 +240,7 @@ function showSearchResults(
             .filter(
                 item => {
 
-                    const searchableText =
+                    const text =
                         (
                             item.title +
                             " " +
@@ -207,10 +248,9 @@ function showSearchResults(
                         )
                         .toLowerCase();
 
-                    return searchableText
-                        .includes(
-                            cleanedQuery
-                        );
+                    return text.includes(
+                        cleaned
+                    );
 
                 }
             )
@@ -266,27 +306,27 @@ function showSearchResults(
                 );
 
             title.className =
-                "search-result-title";
+                "search-title";
 
             title.textContent =
                 item.title;
 
 
-            const sub =
+            const subtitle =
                 document.createElement(
                     "span"
                 );
 
-            sub.className =
-                "search-result-sub";
+            subtitle.className =
+                "search-subtitle";
 
-            sub.textContent =
+            subtitle.textContent =
                 "Open section";
 
 
             button.append(
                 title,
-                sub
+                subtitle
             );
 
 
@@ -330,6 +370,7 @@ function showSearchResults(
 }
 
 
+
 searchInput.addEventListener(
     "input",
     () => {
@@ -337,13 +378,13 @@ searchInput.addEventListener(
         const value =
             searchInput.value;
 
-        clearSearch.style
-            .display =
+        clearSearch.style.display =
             value
                 ? "block"
                 : "none";
 
-        showSearchResults(
+
+        renderSearchResults(
             value
         );
 
@@ -359,7 +400,7 @@ searchInput.addEventListener(
             searchInput.value.trim()
         ) {
 
-            showSearchResults(
+            renderSearchResults(
                 searchInput.value
             );
 
@@ -391,10 +432,9 @@ searchInput.addEventListener(
         ) {
 
             const firstResult =
-                searchResults
-                    .querySelector(
-                        ".search-result"
-                    );
+                searchResults.querySelector(
+                    ".search-result"
+                );
 
             if (firstResult) {
 
@@ -415,8 +455,7 @@ clearSearch.addEventListener(
         searchInput.value =
             "";
 
-        clearSearch.style
-            .display =
+        clearSearch.style.display =
             "none";
 
         hideSearchResults();
@@ -431,12 +470,11 @@ document.addEventListener(
     "click",
     event => {
 
-        const clickedInsideSearch =
-            event.target.closest(
+        if (
+            !event.target.closest(
                 ".header-search"
-            );
-
-        if (!clickedInsideSearch) {
+            )
+        ) {
 
             hideSearchResults();
 
@@ -446,13 +484,14 @@ document.addEventListener(
 );
 
 
-/* =========================
+
+/* =========================================
    CART
-========================= */
+========================================= */
 
 function openCartDrawer() {
 
-    drawerBackdrop.hidden =
+    cartBackdrop.hidden =
         false;
 
     cartDrawer.classList.add(
@@ -464,9 +503,9 @@ function openCartDrawer() {
         "false"
     );
 
-    document.body.style
-        .overflow =
-        "hidden";
+    document.body.classList.add(
+        "locked"
+    );
 
 }
 
@@ -483,20 +522,27 @@ function closeCartDrawer() {
     );
 
 
-    window.setTimeout(
-        () => {
-
-            drawerBackdrop.hidden =
-                true;
-
-        },
-        220
+    document.body.classList.remove(
+        "locked"
     );
 
 
-    document.body.style
-        .overflow =
-        "";
+    window.setTimeout(
+        () => {
+
+            if (
+                !cartDrawer.classList
+                    .contains("open")
+            ) {
+
+                cartBackdrop.hidden =
+                    true;
+
+            }
+
+        },
+        210
+    );
 
 }
 
@@ -513,21 +559,22 @@ closeCart.addEventListener(
 );
 
 
-drawerBackdrop.addEventListener(
+cartBackdrop.addEventListener(
     "click",
     closeCartDrawer
 );
 
 
-shopFromCart.addEventListener(
+cartShopButton.addEventListener(
     "click",
     closeCartDrawer
 );
 
 
-/* =========================
+
+/* =========================================
    NOTICE MODAL
-========================= */
+========================================= */
 
 function showNotice(
     message
@@ -539,9 +586,9 @@ function showNotice(
     noticeModal.hidden =
         false;
 
-    document.body.style
-        .overflow =
-        "hidden";
+    document.body.classList.add(
+        "locked"
+    );
 
 }
 
@@ -551,9 +598,9 @@ function hideNotice() {
     noticeModal.hidden =
         true;
 
-    document.body.style
-        .overflow =
-        "";
+    document.body.classList.remove(
+        "locked"
+    );
 
 }
 
@@ -563,14 +610,14 @@ document
         "[data-message]"
     )
     .forEach(
-        button => {
+        element => {
 
-            button.addEventListener(
+            element.addEventListener(
                 "click",
                 () => {
 
                     showNotice(
-                        button.dataset
+                        element.dataset
                             .message
                     );
 
@@ -586,7 +633,7 @@ accountButton.addEventListener(
     () => {
 
         showNotice(
-            "AXEN Accounts will arrive in a future website update."
+            "AXEN Accounts are planned for a future update."
         );
 
     }
@@ -622,9 +669,10 @@ noticeModal.addEventListener(
 );
 
 
-/* =========================
-   KEYBOARD CONTROLS
-========================= */
+
+/* =========================================
+   ESCAPE KEY
+========================================= */
 
 document.addEventListener(
     "keydown",
@@ -664,17 +712,19 @@ document.addEventListener(
 
 
         closeMobileMenu();
+
         hideSearchResults();
 
     }
 );
 
 
-/* =========================
-   ACTIVE NAVIGATION
-========================= */
 
-const navLinks =
+/* =========================================
+   ACTIVE NAV SECTION
+========================================= */
+
+const desktopLinks =
     Array.from(
         document.querySelectorAll(
             ".desktop-nav a"
@@ -682,7 +732,7 @@ const navLinks =
     );
 
 
-const observedSections =
+const navSections =
     Array.from(
         document.querySelectorAll(
             "main section[id]"
@@ -694,7 +744,7 @@ if (
     "IntersectionObserver" in window
 ) {
 
-    const sectionObserver =
+    const observer =
         new IntersectionObserver(
             entries => {
 
@@ -717,40 +767,32 @@ if (
                         );
 
 
-                if (
-                    !visible.length
-                ) {
+                if (!visible.length) {
 
                     return;
 
                 }
 
 
-                const id =
+                const sectionId =
                     visible[0]
                         .target
                         .id;
 
 
-                navLinks.forEach(
+                desktopLinks.forEach(
                     link => {
 
-                        const active =
+                        const target =
                             link.getAttribute(
                                 "href"
-                            ) ===
-                            `#${id}`;
+                            );
 
-
-                        link.style.color =
-                            active
-                                ? "#000"
-                                : "";
-
-                        link.style.fontWeight =
-                            active
-                                ? "800"
-                                : "";
+                        link.classList.toggle(
+                            "active",
+                            target ===
+                                `#${sectionId}`
+                        );
 
                     }
                 );
@@ -758,7 +800,7 @@ if (
             },
             {
                 threshold: [
-                    0.25,
+                    0.3,
                     0.5,
                     0.7
                 ]
@@ -766,19 +808,23 @@ if (
         );
 
 
-    observedSections.forEach(
-        section =>
-            sectionObserver.observe(
+    navSections.forEach(
+        section => {
+
+            observer.observe(
                 section
-            )
+            );
+
+        }
     );
 
 }
 
 
-/* =========================
-   CLEAN RESIZE
-========================= */
+
+/* =========================================
+   RESIZE
+========================================= */
 
 window.addEventListener(
     "resize",
@@ -786,7 +832,7 @@ window.addEventListener(
 
         if (
             window.innerWidth >
-            920
+            900
         ) {
 
             closeMobileMenu();
