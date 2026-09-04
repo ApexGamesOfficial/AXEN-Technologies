@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AXEN OS | AXEN Technologies</title>
+
+    <meta
+        name="description"
+        content="Explore AXEN OS, the future computing experience from AXEN Technologies."
+    >
+
+    <link rel="stylesheet" href="axen-os.css?v=1">
+</head>
+
+<body>
+
+    <!-- =====================================
+         HEADER
+    ====================================== -->
+
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <a
+                href="index.html"
+                class="brand"
+                aria-label="AXEN Home"
+            >
+                <img
+                    src="axen-logo.png"
+                    alt="AXEN"
+                    class="brand-logo"
+                >
+            </a>
+
+
+            <div class="header-search">
+
+                <svg
+                    class="search-icon"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                >
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+                </svg>
+
+                <input
+                    id="siteSearch"
+                    type="search"
+                    placeholder="Search AXEN"
+                    autocomplete="off"
+                    aria-label="Search AXEN"
+                >
+
+                <button
+                    id="clearSearch"
+                    class="clear-search"
+                    type="button"
+                    aria-label="Clear search"
+                >
+                    ×
+                </button>
+
+                <div
+                    id="searchResults"
+                    class="search-results"
+                    hidden
+                ></div>
+
+            </div>
+
+
+            <nav
+                class="desktop-nav"
+                aria-label="Main navigation"
+            >
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="shop.html">
+                    Shop
+                </a>
+
+                <a
+                    href="axen-os.html"
+                    class="active"
+                >
+                    AXEN OS
+                </a>
+
+                <a href="support.html">
+                    Support
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+            </nav>
+
+
+            <div class="header-actions">
+
+                <button
+                    id="cartButton"
+                    class="icon-button"
+                    type="button"
+                    aria-label="Open cart"
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <path
+                            d="M3 4h2l2.1 10.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L20 8H7"
+                        ></path>
+
+                        <circle cx="10" cy="19" r="1.3"></circle>
+                        <circle cx="17" cy="19" r="1.3"></circle>
+                    </svg>
+                </button>
+
+
+                <button
+                    id="accountButton"
+                    class="icon-button"
+                    type="button"
+                    aria-label="AXEN Account"
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <circle cx="12" cy="8" r="4"></circle>
+
+                        <path
+                            d="M4.5 21c.8-4.2 3.3-6.5 7.5-6.5s6.7 2.3 7.5 6.5"
+                        ></path>
+                    </svg>
+                </button>
+
+
+                <button
+                    id="menuButton"
+                    class="menu-button"
+                    type="button"
+                    aria-label="Open menu"
+                    aria-expanded="false"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <nav
+            id="mobileNav"
+            class="mobile-nav"
+            aria-label="Mobile navigation"
+            hidden
+        >
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="axen-os.html" class="active">AXEN OS</a>
+            <a href="support.html">Support</a>
+            <a href="about.html">About</a>
+        </nav>
+
+    </header>
+
+
+
+    <main>
+
+        <!-- =================================
+             HERO
+        ================================== -->
+
+        <section
+            id="overview"
+            class="hero"
+            data-search-title="AXEN OS"
+            data-search-keywords="axen os operating system software axis desktop"
+        >
+
+            <div class="hero-inner">
+
+                <div class="hero-copy">
+
+                    <div class="status-pill">
+                        IN DEVELOPMENT
+                    </div>
+
+                    <p class="eyebrow">
+                        AXEN OS
+                    </p>
+
+                    <h1>
+                        Computing,
+                        <span>the AXEN way.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        A new AXEN computing experience designed
+                        around simplicity, productivity, personalization,
+                        and the technology we're building next.
+                    </p>
+
+
+                    <div class="hero-actions">
+
+                        <a
+                            href="#experience"
+                            class="button button-light"
+                        >
+                            Explore AXEN OS
+                        </a>
+
+                        <button
+                            type="button"
+                            class="button button-dark"
+                            data-message="AXEN OS is currently in development. Public availability has not been announced."
+                        >
+                            Availability
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-visual">
+
+                    <div class="os-display">
+
+                        <div class="os-screen">
+
+                            <div class="desktop-wallpaper">
+
+                                <div class="wallpaper-ring ring-one"></div>
+                                <div class="wallpaper-ring ring-two"></div>
+
+                                <img
+                                    src="axen-logo.png"
+                                    alt=""
+                                    class="desktop-logo"
+                                >
+
+                            </div>
+
+
+                            <div class="taskbar">
+
+                                <div class="taskbar-start">
+                                    A
+                                </div>
+
+                                <div class="taskbar-app"></div>
+                                <div class="taskbar-app"></div>
+                                <div class="taskbar-app"></div>
+
+                                <div class="taskbar-space"></div>
+
+                                <span class="taskbar-time">
+                                    AXEN OS
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             EXPERIENCE
+        ================================== -->
+
+        <section
+            id="experience"
+            class="section"
+            data-search-title="AXEN OS Experience"
+            data-search-keywords="desktop shell windows files settings launcher"
+        >
+
+            <div class="section-heading">
+
+                <p class="section-label">
+                    THE EXPERIENCE
+                </p>
+
+                <h2>
+                    Familiar where it matters.
+                    AXEN where it counts.
+                </h2>
+
+                <p>
+                    AXEN OS is being designed around a clean desktop
+                    experience with AXEN-built software, system tools,
+                    personalization, and connected services.
+                </p>
+
+            </div>
+
+
+            <div class="feature-grid">
+
+                <article class="feature-card">
+
+                    <span>01</span>
+
+                    <h3>
+                        AXEN Shell
+                    </h3>
+
+                    <p>
+                        A custom desktop experience designed around
+                        the AXEN visual language.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <span>02</span>
+
+                    <h3>
+                        Files
+                    </h3>
+
+                    <p>
+                        A focused place for managing local and
+                        connected AXEN content.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <span>03</span>
+
+                    <h3>
+                        Settings
+                    </h3>
+
+                    <p>
+                        System controls, personalization, devices,
+                        accounts, and updates in one place.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <span>04</span>
+
+                    <h3>
+                        Connected
+                    </h3>
+
+                    <p>
+                        Designed to connect future AXEN devices,
+                        software, and services together.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             DESIGN
+        ================================== -->
+
+        <section
+            id="design"
+            class="dark-section"
+            data-search-title="AXEN OS Design"
+            data-search-keywords="design interface desktop windows taskbar modern"
+        >
+
+            <div class="dark-copy">
+
+                <p class="section-label dark-label">
+                    DESIGNED FOR FOCUS
+                </p>
+
+                <h2>
+                    Less noise.
+                    More control.
+                </h2>
+
+                <p>
+                    AXEN OS is being built with a restrained interface:
+                    clean surfaces, subtle transparency, clear controls,
+                    and an experience that stays out of your way.
+                </p>
+
+            </div>
+
+
+            <div class="ui-preview">
+
+                <div class="preview-window">
+
+                    <div class="preview-titlebar">
+
+                        <div class="window-controls">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <strong>
+                            AXEN Settings
+                        </strong>
+
+                    </div>
+
+
+                    <div class="preview-body">
+
+                        <aside class="preview-sidebar">
+
+                            <div class="sidebar-active">
+                                System
+                            </div>
+
+                            <div>
+                                Personalization
+                            </div>
+
+                            <div>
+                                Accounts
+                            </div>
+
+                            <div>
+                                Devices
+                            </div>
+
+                            <div>
+                                Updates
+                            </div>
+
+                        </aside>
+
+
+                        <div class="preview-content">
+
+                            <p>
+                                SYSTEM
+                            </p>
+
+                            <h3>
+                                Your AXEN PC
+                            </h3>
+
+                            <div class="settings-row">
+
+                                <span>
+                                    Display
+                                </span>
+
+                                <small>
+                                    Brightness, scale, layout
+                                </small>
+
+                            </div>
+
+                            <div class="settings-row">
+
+                                <span>
+                                    Sound
+                                </span>
+
+                                <small>
+                                    Output and volume
+                                </small>
+
+                            </div>
+
+                            <div class="settings-row">
+
+                                <span>
+                                    Storage
+                                </span>
+
+                                <small>
+                                    Files and available space
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             AXIS
+        ================================== -->
+
+        <section
+            id="axis"
+            class="axis-section"
+            data-search-title="AXIS AI"
+            data-search-keywords="axis ai assistant axen artificial intelligence"
+        >
+
+            <div class="axis-mark">
+                <span>
+                    AXIS
+                </span>
+            </div>
+
+
+            <div class="axis-copy">
+
+                <p class="section-label">
+                    POWERED WITH AXIS AI
+                </p>
+
+                <h2>
+                    Meet AXIS.
+                </h2>
+
+                <p>
+                    AXIS is the future AI assistant for the AXEN
+                    computing experience, designed to help with
+                    system tasks, information, organization, and
+                    supported AXEN features.
+                </p>
+
+
+                <button
+                    type="button"
+                    class="button button-black"
+                    data-message="AXIS is planned for a future AXEN OS release and is not available yet."
+                >
+                    Learn about AXIS
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             ROADMAP
+        ================================== -->
+
+        <section
+            id="roadmap"
+            class="section"
+            data-search-title="AXEN OS Roadmap"
+            data-search-keywords="roadmap version v0.1 v0.2 v0.3 v0.4 axis"
+        >
+
+            <div class="section-heading">
+
+                <p class="section-label">
+                    DEVELOPMENT ROADMAP
+                </p>
+
+                <h2>
+                    Built in stages.
+                </h2>
+
+                <p>
+                    AXEN OS development is planned as a series of
+                    foundational releases rather than one massive launch.
+                </p>
+
+            </div>
+
+
+            <div class="roadmap">
+
+                <article>
+
+                    <div class="version">
+                        v0.1
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Foundation
+                        </h3>
+
+                        <p>
+                            AXEN Shell, desktop, taskbar,
+                            launcher, windows, and visual system.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article>
+
+                    <div class="version">
+                        v0.2
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Core Apps
+                        </h3>
+
+                        <p>
+                            Files, Settings, search, notifications,
+                            and essential system tools.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article>
+
+                    <div class="version">
+                        v0.3
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            System Integration
+                        </h3>
+
+                        <p>
+                            Accounts, personalization, updates,
+                            deeper system integration, and stability.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article>
+
+                    <div class="version">
+                        v0.4
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            AXIS
+                        </h3>
+
+                        <p>
+                            The first planned AXIS AI integration
+                            inside the AXEN OS experience.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             VIRTUAL COMPUTER
+        ================================== -->
+
+        <section class="virtual-cta">
+
+            <div>
+
+                <p class="section-label dark-label">
+                    AXEN VIRTUAL COMPUTER
+                </p>
+
+                <h2>
+                    AXEN OS.
+                    Anywhere.
+                </h2>
+
+                <p>
+                    AXEN Virtual Computer is being explored as
+                    a future way to access an AXEN computing
+                    experience through cloud infrastructure.
+                </p>
+
+            </div>
+
+
+            <a
+                href="virtual-computer.html"
+                class="button button-light"
+            >
+                Explore Virtual Computer
+            </a>
+
+        </section>
+
+
+
+        <!-- =================================
+             FINAL
+        ================================== -->
+
+        <section class="final-cta">
+
+            <img
+                src="axen-logo.png"
+                alt="AXEN"
+            >
+
+            <h2>
+                The next AXEN experience
+                starts here.
+            </h2>
+
+            <p>
+                AXEN OS is currently in development.
+            </p>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-top">
+
+            <img
+                src="axen-logo.png"
+                alt="AXEN"
+                class="footer-logo"
+            >
+
+
+            <div class="footer-columns">
+
+                <div>
+
+                    <h4>
+                        PRODUCTS
+                    </h4>
+
+                    <a href="shop.html">
+                        Shop
+                    </a>
+
+                    <a href="axen-os.html">
+                        AXEN OS
+                    </a>
+
+                    <a href="virtual-computer.html">
+                        Virtual Computer
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <h4>
+                        COMPANY
+                    </h4>
+
+                    <a href="about.html">
+                        About
+                    </a>
+
+                    <a href="support.html">
+                        Support
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 AXEN Technologies. All rights reserved.
+            </span>
+
+            <span>
+                AXEN OS is currently in development.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================
+         CART
+    ====================================== -->
+
+    <div
+        id="cartBackdrop"
+        class="cart-backdrop"
+        hidden
+    ></div>
+
+
+    <aside
+        id="cartDrawer"
+        class="cart-drawer"
+        aria-hidden="true"
+    >
+
+        <div class="cart-header">
+
+            <h2>
+                Your Cart
+            </h2>
+
+            <button
+                id="closeCart"
+                class="close-button"
+                type="button"
+                aria-label="Close cart"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="cart-empty">
+
+            <h3>
+                Your cart is empty.
+            </h3>
+
+            <p>
+                AXEN products will appear here when purchasing
+                becomes available.
+            </p>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================
+         NOTICE
+    ====================================== -->
+
+    <div
+        id="noticeModal"
+        class="notice-modal"
+        hidden
+    >
+
+        <div class="notice-card">
+
+            <button
+                id="closeNotice"
+                class="close-button notice-close"
+                type="button"
+                aria-label="Close"
+            >
+                ×
+            </button>
+
+            <img
+                src="axen-logo.png"
+                alt="AXEN"
+                class="notice-logo"
+            >
+
+            <h2>
+                AXEN
+            </h2>
+
+            <p id="noticeText"></p>
+
+            <button
+                id="noticeOkay"
+                type="button"
+                class="modal-button"
+            >
+                Got it
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="axen-os.js?v=1"></script>
+
+</body>
+</html>
