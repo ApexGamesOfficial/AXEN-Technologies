@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Support | AXEN Technologies</title>
+
+    <meta
+        name="description"
+        content="Get help with AXEN products, services, accounts, and future hardware."
+    >
+
+    <link rel="stylesheet" href="support.css?v=1">
+</head>
+
+<body>
+
+    <!-- =====================================
+         HEADER
+    ====================================== -->
+
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <a
+                href="index.html"
+                class="brand"
+                aria-label="AXEN Home"
+            >
+                <img
+                    src="axen-logo.png"
+                    alt="AXEN"
+                    class="brand-logo"
+                >
+            </a>
+
+
+            <div class="header-search">
+
+                <svg
+                    class="search-icon"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                >
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+                </svg>
+
+                <input
+                    id="siteSearch"
+                    type="search"
+                    placeholder="Search AXEN"
+                    autocomplete="off"
+                    aria-label="Search AXEN"
+                >
+
+                <button
+                    id="clearSearch"
+                    class="clear-search"
+                    type="button"
+                    aria-label="Clear search"
+                >
+                    ×
+                </button>
+
+                <div
+                    id="searchResults"
+                    class="search-results"
+                    hidden
+                ></div>
+
+            </div>
+
+
+            <nav
+                class="desktop-nav"
+                aria-label="Main navigation"
+            >
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="shop.html">
+                    Shop
+                </a>
+
+                <a href="axen-os.html">
+                    AXEN OS
+                </a>
+
+                <a
+                    href="support.html"
+                    class="active"
+                >
+                    Support
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+            </nav>
+
+
+            <div class="header-actions">
+
+                <button
+                    id="cartButton"
+                    class="icon-button"
+                    type="button"
+                    aria-label="Open cart"
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <path
+                            d="M3 4h2l2.1 10.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L20 8H7"
+                        ></path>
+
+                        <circle cx="10" cy="19" r="1.3"></circle>
+                        <circle cx="17" cy="19" r="1.3"></circle>
+                    </svg>
+                </button>
+
+
+                <button
+                    id="accountButton"
+                    class="icon-button"
+                    type="button"
+                    aria-label="AXEN Account"
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <circle cx="12" cy="8" r="4"></circle>
+
+                        <path
+                            d="M4.5 21c.8-4.2 3.3-6.5 7.5-6.5s6.7 2.3 7.5 6.5"
+                        ></path>
+                    </svg>
+                </button>
+
+
+                <button
+                    id="menuButton"
+                    class="menu-button"
+                    type="button"
+                    aria-label="Open menu"
+                    aria-expanded="false"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <nav
+            id="mobileNav"
+            class="mobile-nav"
+            aria-label="Mobile navigation"
+            hidden
+        >
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="axen-os.html">AXEN OS</a>
+            <a href="support.html" class="active">Support</a>
+            <a href="about.html">About</a>
+        </nav>
+
+    </header>
+
+
+
+    <main>
+
+        <!-- =================================
+             HERO
+        ================================== -->
+
+        <section
+            class="support-hero"
+            data-search-title="AXEN Support"
+            data-search-keywords="support help troubleshooting axen products account"
+        >
+
+            <div class="support-hero-inner">
+
+                <p class="eyebrow">
+                    AXEN SUPPORT
+                </p>
+
+                <h1>
+                    How can we help?
+                </h1>
+
+                <p>
+                    Find help for AXEN software, services,
+                    accounts, and future products.
+                </p>
+
+
+                <div class="support-search">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <circle cx="11" cy="11" r="7"></circle>
+                        <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+                    </svg>
+
+                    <input
+                        id="supportSearch"
+                        type="search"
+                        placeholder="Search support"
+                        autocomplete="off"
+                    >
+
+                    <button
+                        id="supportSearchButton"
+                        type="button"
+                    >
+                        Search
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="supportSearchMessage"
+                    class="support-search-message"
+                    hidden
+                ></div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             PRODUCT SUPPORT
+        ================================== -->
+
+        <section
+            id="products"
+            class="section"
+            data-search-title="Product Support"
+            data-search-keywords="axen os virtual computer hardware account website"
+        >
+
+            <div class="section-heading">
+
+                <p class="section-label">
+                    PRODUCT SUPPORT
+                </p>
+
+                <h2>
+                    Choose a product.
+                </h2>
+
+                <p>
+                    Explore help topics by AXEN product and service.
+                </p>
+
+            </div>
+
+
+            <div class="support-grid">
+
+                <article
+                    class="support-card"
+                    data-support-topic="axen os operating system shell desktop settings files updates software"
+                >
+
+                    <div class="support-card-number">
+                        01
+                    </div>
+
+                    <h3>
+                        AXEN OS
+                    </h3>
+
+                    <p>
+                        Learn about the AXEN OS experience,
+                        development roadmap, updates, and system features.
+                    </p>
+
+                    <a href="axen-os.html">
+                        Explore AXEN OS
+                        <span>→</span>
+                    </a>
+
+                </article>
+
+
+                <article
+                    class="support-card"
+                    data-support-topic="virtual computer cloud pc subscription remote desktop performance gaming"
+                >
+
+                    <div class="support-card-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Virtual Computer
+                    </h3>
+
+                    <p>
+                        Information about the future AXEN Virtual
+                        Computer cloud PC experience.
+                    </p>
+
+                    <a href="virtual-computer.html">
+                        View Virtual Computer
+                        <span>→</span>
+                    </a>
+
+                </article>
+
+
+                <article
+                    class="support-card"
+                    data-support-topic="hardware keyboards computers laptop devices future product"
+                >
+
+                    <div class="support-card-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Hardware
+                    </h3>
+
+                    <p>
+                        Future support for AXEN keyboards,
+                        computers, accessories, and other devices.
+                    </p>
+
+                    <button
+                        type="button"
+                        data-message="AXEN hardware support will expand as AXEN hardware products become available."
+                    >
+                        Hardware status
+                        <span>→</span>
+                    </button>
+
+                </article>
+
+
+                <article
+                    class="support-card"
+                    data-support-topic="account axen account website profile login authentication"
+                >
+
+                    <div class="support-card-number">
+                        04
+                    </div>
+
+                    <h3>
+                        AXEN Account
+                    </h3>
+
+                    <p>
+                        Help for future AXEN account features,
+                        profiles, sign-in, and connected services.
+                    </p>
+
+                    <button
+                        type="button"
+                        data-message="AXEN Account features are currently in development."
+                    >
+                        Account status
+                        <span>→</span>
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             POPULAR TOPICS
+        ================================== -->
+
+        <section
+            id="topics"
+            class="topics-section"
+            data-search-title="Popular Support Topics"
+            data-search-keywords="popular help release download account virtual computer hardware"
+        >
+
+            <div class="topics-inner">
+
+                <div class="section-heading light-heading">
+
+                    <p class="section-label light-label">
+                        POPULAR TOPICS
+                    </p>
+
+                    <h2>
+                        Quick answers.
+                    </h2>
+
+                </div>
+
+
+                <div class="topic-list">
+
+                    <button
+                        type="button"
+                        class="topic-row"
+                        data-message="AXEN OS is currently in development. A public release date has not been announced."
+                    >
+                        <div>
+                            <span class="topic-category">
+                                AXEN OS
+                            </span>
+
+                            <strong>
+                                When will AXEN OS be available?
+                            </strong>
+                        </div>
+
+                        <span class="topic-arrow">
+                            →
+                        </span>
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="topic-row"
+                        data-message="AXEN Virtual Computer is a future cloud PC concept currently in development. Final plans, pricing, and availability have not been announced."
+                    >
+                        <div>
+                            <span class="topic-category">
+                                VIRTUAL COMPUTER
+                            </span>
+
+                            <strong>
+                                Is AXEN Virtual Computer available now?
+                            </strong>
+                        </div>
+
+                        <span class="topic-arrow">
+                            →
+                        </span>
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="topic-row"
+                        data-message="AXEN Accounts are planned for a future website update."
+                    >
+                        <div>
+                            <span class="topic-category">
+                                ACCOUNT
+                            </span>
+
+                            <strong>
+                                How do I create an AXEN Account?
+                            </strong>
+                        </div>
+
+                        <span class="topic-arrow">
+                            →
+                        </span>
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="topic-row"
+                        data-message="AXEN hardware products are still being developed. Purchasing and warranty information will be added when products become available."
+                    >
+                        <div>
+                            <span class="topic-category">
+                                HARDWARE
+                            </span>
+
+                            <strong>
+                                Where can I buy AXEN hardware?
+                            </strong>
+                        </div>
+
+                        <span class="topic-arrow">
+                            →
+                        </span>
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="topic-row"
+                        data-message="AXEN product downloads will be added only when public AXEN software becomes available."
+                    >
+                        <div>
+                            <span class="topic-category">
+                                DOWNLOADS
+                            </span>
+
+                            <strong>
+                                Where can I download AXEN software?
+                            </strong>
+                        </div>
+
+                        <span class="topic-arrow">
+                            →
+                        </span>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             STATUS
+        ================================== -->
+
+        <section
+            id="status"
+            class="section"
+            data-search-title="Development Status"
+            data-search-keywords="development status services availability products in development"
+        >
+
+            <div class="status-layout">
+
+                <div>
+
+                    <p class="section-label">
+                        DEVELOPMENT STATUS
+                    </p>
+
+                    <h2>
+                        Building the foundation.
+                    </h2>
+
+                    <p class="status-copy">
+                        AXEN is still developing its first products
+                        and services. Support resources will expand
+                        alongside each public release.
+                    </p>
+
+                </div>
+
+
+                <div class="status-table">
+
+                    <div class="status-row">
+
+                        <div>
+                            <strong>
+                                AXEN Website
+                            </strong>
+
+                            <span>
+                                Public website
+                            </span>
+                        </div>
+
+                        <div class="status-badge live">
+                            LIVE
+                        </div>
+
+                    </div>
+
+
+                    <div class="status-row">
+
+                        <div>
+                            <strong>
+                                AXEN OS
+                            </strong>
+
+                            <span>
+                                Operating system experience
+                            </span>
+                        </div>
+
+                        <div class="status-badge">
+                            IN DEVELOPMENT
+                        </div>
+
+                    </div>
+
+
+                    <div class="status-row">
+
+                        <div>
+                            <strong>
+                                Virtual Computer
+                            </strong>
+
+                            <span>
+                                Cloud PC service
+                            </span>
+                        </div>
+
+                        <div class="status-badge">
+                            IN DEVELOPMENT
+                        </div>
+
+                    </div>
+
+
+                    <div class="status-row">
+
+                        <div>
+                            <strong>
+                                AXEN Hardware
+                            </strong>
+
+                            <span>
+                                Keyboards, PCs, and devices
+                            </span>
+                        </div>
+
+                        <div class="status-badge">
+                            FUTURE PRODUCT
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             SELF SERVICE
+        ================================== -->
+
+        <section
+            id="resources"
+            class="resources-section"
+            data-search-title="Support Resources"
+            data-search-keywords="resources documentation guides updates product information"
+        >
+
+            <div class="resources-inner">
+
+                <div class="resource-card">
+
+                    <span>
+                        GUIDES
+                    </span>
+
+                    <h3>
+                        Product guides
+                    </h3>
+
+                    <p>
+                        Setup and product documentation will be
+                        added as AXEN products reach public availability.
+                    </p>
+
+                    <button
+                        type="button"
+                        data-message="AXEN product guides will be published as supported products become available."
+                    >
+                        View status
+                    </button>
+
+                </div>
+
+
+                <div class="resource-card">
+
+                    <span>
+                        UPDATES
+                    </span>
+
+                    <h3>
+                        Software updates
+                    </h3>
+
+                    <p>
+                        Future AXEN software release information,
+                        changes, and update notes will live here.
+                    </p>
+
+                    <button
+                        type="button"
+                        data-message="AXEN software update history will be added after the first public software releases."
+                    >
+                        View status
+                    </button>
+
+                </div>
+
+
+                <div class="resource-card">
+
+                    <span>
+                        COMMUNITY
+                    </span>
+
+                    <h3>
+                        AXEN community
+                    </h3>
+
+                    <p>
+                        Community support and discussion features
+                        are planned for future development.
+                    </p>
+
+                    <button
+                        type="button"
+                        data-message="AXEN community support features are planned for a future update."
+                    >
+                        View status
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             CONTACT
+        ================================== -->
+
+        <section
+            id="contact"
+            class="contact-section"
+            data-search-title="Contact AXEN"
+            data-search-keywords="contact support email help request ticket"
+        >
+
+            <div>
+
+                <p class="section-label light-label">
+                    CONTACT AXEN
+                </p>
+
+                <h2>
+                    Need more help?
+                </h2>
+
+                <p>
+                    Direct customer support will expand as AXEN
+                    products and services become publicly available.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="contact-button"
+                data-message="Direct AXEN customer support is not open yet. Support contact options will be added as AXEN products become publicly available."
+            >
+                Contact support
+                <span>→</span>
+            </button>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-top">
+
+            <img
+                src="axen-logo.png"
+                alt="AXEN"
+                class="footer-logo"
+            >
+
+
+            <div class="footer-columns">
+
+                <div>
+
+                    <h4>
+                        PRODUCTS
+                    </h4>
+
+                    <a href="shop.html">
+                        Shop
+                    </a>
+
+                    <a href="axen-os.html">
+                        AXEN OS
+                    </a>
+
+                    <a href="virtual-computer.html">
+                        Virtual Computer
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <h4>
+                        COMPANY
+                    </h4>
+
+                    <a href="about.html">
+                        About
+                    </a>
+
+                    <a href="support.html">
+                        Support
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 AXEN Technologies. All rights reserved.
+            </span>
+
+            <span>
+                Products shown may be in development.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================
+         CART
+    ====================================== -->
+
+    <div
+        id="cartBackdrop"
+        class="cart-backdrop"
+        hidden
+    ></div>
+
+
+    <aside
+        id="cartDrawer"
+        class="cart-drawer"
+        aria-hidden="true"
+    >
+
+        <div class="cart-header">
+
+            <h2>
+                Your Cart
+            </h2>
+
+            <button
+                id="closeCart"
+                class="close-button"
+                type="button"
+                aria-label="Close cart"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="cart-empty">
+
+            <h3>
+                Your cart is empty.
+            </h3>
+
+            <p>
+                AXEN products will appear here when purchasing
+                becomes available.
+            </p>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================
+         NOTICE MODAL
+    ====================================== -->
+
+    <div
+        id="noticeModal"
+        class="notice-modal"
+        hidden
+    >
+
+        <div class="notice-card">
+
+            <button
+                id="closeNotice"
+                class="close-button notice-close"
+                type="button"
+                aria-label="Close"
+            >
+                ×
+            </button>
+
+            <img
+                src="axen-logo.png"
+                alt="AXEN"
+                class="notice-logo"
+            >
+
+            <h2>
+                AXEN Support
+            </h2>
+
+            <p id="noticeText"></p>
+
+            <button
+                id="noticeOkay"
+                type="button"
+                class="modal-button"
+            >
+                Got it
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="support.js?v=1"></script>
+
+</body>
+</html>
