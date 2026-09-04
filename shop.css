@@ -1,1071 +1,2034 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Shop | AXEN Technologies</title>
-
-    <meta
-        name="description"
-        content="Explore AXEN hardware, software, virtual computing, and merchandise."
-    >
-
-    <link rel="stylesheet" href="shop.css?v=1">
-</head>
-
-<body>
-
-    <!-- =====================================
-         HEADER
-    ====================================== -->
-
-    <header class="site-header">
-
-        <div class="header-inner">
-
-            <a
-                href="index.html"
-                class="brand"
-                aria-label="AXEN Home"
-            >
-                <img
-                    src="axen-logo.png"
-                    alt="AXEN"
-                    class="brand-logo"
-                >
-            </a>
-
-
-            <!-- SEARCH -->
-            <div class="header-search">
-
-                <svg
-                    class="search-icon"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                >
-                    <circle
-                        cx="11"
-                        cy="11"
-                        r="7"
-                    ></circle>
-
-                    <line
-                        x1="16.5"
-                        y1="16.5"
-                        x2="21"
-                        y2="21"
-                    ></line>
-                </svg>
-
-                <input
-                    id="shopSearch"
-                    type="search"
-                    placeholder="Search AXEN"
-                    autocomplete="off"
-                    aria-label="Search AXEN products"
-                >
-
-                <button
-                    id="clearSearch"
-                    class="clear-search"
-                    type="button"
-                    aria-label="Clear search"
-                >
-                    ×
-                </button>
-
-            </div>
-
-
-            <!-- NAV -->
-            <nav
-                class="desktop-nav"
-                aria-label="Main navigation"
-            >
-                <a href="index.html">
-                    Home
-                </a>
-
-                <a
-                    href="shop.html"
-                    class="active"
-                >
-                    Shop
-                </a>
-
-                <a href="index.html#axen-os">
-                    AXEN OS
-                </a>
-
-                <a href="index.html#support">
-                    Support
-                </a>
-
-                <a href="index.html#about">
-                    About
-                </a>
-            </nav>
-
-
-            <!-- ACTIONS -->
-            <div class="header-actions">
-
-                <button
-                    id="cartButton"
-                    class="icon-button"
-                    type="button"
-                    aria-label="Open cart"
-                >
-                    <svg
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                    >
-                        <path
-                            d="M3 4h2l2.1 10.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L20 8H7"
-                        ></path>
-
-                        <circle
-                            cx="10"
-                            cy="19"
-                            r="1.3"
-                        ></circle>
-
-                        <circle
-                            cx="17"
-                            cy="19"
-                            r="1.3"
-                        ></circle>
-                    </svg>
-                </button>
-
-
-                <button
-                    id="accountButton"
-                    class="icon-button"
-                    type="button"
-                    aria-label="AXEN Account"
-                >
-                    <svg
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                    >
-                        <circle
-                            cx="12"
-                            cy="8"
-                            r="4"
-                        ></circle>
-
-                        <path
-                            d="M4.5 21c.8-4.2 3.3-6.5 7.5-6.5s6.7 2.3 7.5 6.5"
-                        ></path>
-                    </svg>
-                </button>
-
-
-                <button
-                    id="menuButton"
-                    class="menu-button"
-                    type="button"
-                    aria-label="Open menu"
-                    aria-expanded="false"
-                >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <nav
-            id="mobileNav"
-            class="mobile-nav"
-            aria-label="Mobile navigation"
-            hidden
-        >
-            <a href="index.html">Home</a>
-            <a href="shop.html" class="active">Shop</a>
-            <a href="index.html#axen-os">AXEN OS</a>
-            <a href="index.html#support">Support</a>
-            <a href="index.html#about">About</a>
-        </nav>
-
-    </header>
-
-
-
-    <!-- =====================================
-         SHOP HERO
-    ====================================== -->
-
-    <main>
-
-        <section class="shop-hero">
+/* =========================================
+   AXEN SHOP
+   v0.1
+========================================= */
 
-            <div class="shop-hero-inner">
+* {
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --black: #050505;
+    --black-soft: #0c0c0c;
+
+    --white: #ffffff;
+
+    --gray-50: #f7f7f7;
+    --gray-100: #eeeeee;
+    --gray-200: #dddddd;
+    --gray-300: #c5c5c5;
+    --gray-400: #999999;
+    --gray-500: #737373;
+    --gray-600: #555555;
+    --gray-700: #333333;
+    --gray-800: #202020;
+
+    --page-width: 1440px;
+    --header-height: 72px;
+}
 
-                <p class="eyebrow">
-                    AXEN SHOP
-                </p>
-
-                <h1>
-                    Technology built
-                    <span>the AXEN way.</span>
-                </h1>
+body {
+    margin: 0;
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
 
-                <p class="shop-hero-description">
-                    Explore future AXEN hardware, software,
-                    virtual computing, and merchandise.
-                </p>
+    background: white;
 
-            </div>
+    color: #080808;
 
-        </section>
+    overflow-x: hidden;
+}
 
+body.locked {
+    overflow: hidden;
+}
 
-
-        <!-- =================================
-             CATEGORY BAR
-        ================================== -->
-
-        <section class="category-bar">
-
-            <div class="category-inner">
-
-                <button
-                    type="button"
-                    class="category-button active"
-                    data-filter="all"
-                >
-                    All
-                </button>
-
-                <button
-                    type="button"
-                    class="category-button"
-                    data-filter="hardware"
-                >
-                    Hardware
-                </button>
-
-                <button
-                    type="button"
-                    class="category-button"
-                    data-filter="virtual"
-                >
-                    Virtual
-                </button>
+button,
+input {
+    font: inherit;
+}
 
-                <button
-                    type="button"
-                    class="category-button"
-                    data-filter="software"
-                >
-                    Software
-                </button>
+button {
+    color: inherit;
+}
 
-                <button
-                    type="button"
-                    class="category-button"
-                    data-filter="merch"
-                >
-                    Merch
-                </button>
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-            </div>
+img {
+    display: block;
+    max-width: 100%;
+}
 
-        </section>
 
 
+/* =========================================
+   HEADER
+========================================= */
 
-        <!-- =================================
-             FEATURED
-        ================================== -->
+.site-header {
+    position: sticky;
 
-        <section class="shop-section">
+    top: 0;
 
-            <div class="section-heading">
+    z-index: 1000;
 
-                <div>
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.96
+        );
 
-                    <p class="section-label">
-                        FEATURED
-                    </p>
+    backdrop-filter: blur(16px);
 
-                    <h2>
-                        The future of AXEN.
-                    </h2>
+    border-bottom:
+        1px solid
+        rgba(
+            0,
+            0,
+            0,
+            0.08
+        );
+}
 
-                </div>
+.header-inner {
+    width:
+        min(
+            calc(100% - 50px),
+            var(--page-width)
+        );
 
-            </div>
+    height: var(--header-height);
 
+    margin: 0 auto;
 
-            <div class="featured-grid">
+    display: flex;
+    align-items: center;
 
-                <!-- KEYBOARD -->
-                <article
-                    class="featured-card product-item"
-                    data-category="hardware"
-                    data-search="axen keyboard keyboards mechanical hardware peripheral"
-                >
+    gap: 27px;
+}
 
-                    <div class="featured-visual keyboard-visual">
+.brand {
+    display: flex;
+    align-items: center;
 
-                        <div class="keyboard">
+    flex: 0 0 auto;
+}
 
-                            <div class="keyboard-name">
-                                AXEN
-                            </div>
+.brand-logo {
+    width: 118px;
+}
 
-                            <div class="keyboard-keys">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
 
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
 
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
+/* =========================================
+   SEARCH
+========================================= */
 
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
+.header-search {
+    position: relative;
 
-                        </div>
+    width: 230px;
 
-                    </div>
+    flex:
+        0
+        1
+        230px;
+}
 
+.header-search input {
+    width: 100%;
+    height: 40px;
 
-                    <div class="featured-info">
+    padding:
+        0
+        38px
+        0
+        40px;
 
-                        <div>
+    border:
+        1px solid
+        #d2d2d2;
 
-                            <p class="product-status">
-                                IN DEVELOPMENT
-                            </p>
+    border-radius: 22px;
 
-                            <h3>
-                                AXEN Keyboards
-                            </h3>
+    outline: none;
 
-                            <p>
-                                The first step into AXEN hardware.
-                                Built for creation, productivity,
-                                and gaming.
-                            </p>
+    background: #f3f3f3;
 
-                        </div>
+    color: #111;
 
+    font-size: 13px;
 
-                        <button
-                            type="button"
-                            class="product-button"
-                            data-message="AXEN keyboards are currently in development."
-                        >
-                            Learn more
-                            <span>→</span>
-                        </button>
+    transition:
+        background 150ms ease,
+        border-color 150ms ease;
+}
 
-                    </div>
+.header-search input:focus {
+    background: white;
 
-                </article>
+    border-color: #888;
+}
 
+.search-icon {
+    position: absolute;
 
+    width: 17px;
+    height: 17px;
 
-                <!-- VIRTUAL COMPUTER -->
-                <article
-                    class="featured-card product-item virtual-card"
-                    data-category="virtual"
-                    data-search="axen virtual computer cloud pc subscription apexcloud windows remote computer"
-                >
+    left: 14px;
+    top: 50%;
 
-                    <div class="featured-visual virtual-visual">
+    transform:
+        translateY(-50%);
 
-                        <div class="cloud-display">
+    fill: none;
 
-                            <div class="cloud-display-top">
+    stroke: #555;
+    stroke-width: 1.8;
 
-                                <img
-                                    src="axen-logo.png"
-                                    alt=""
-                                >
+    pointer-events: none;
+}
 
-                                <span>
-                                    VIRTUAL COMPUTER
-                                </span>
+.clear-search {
+    position: absolute;
 
-                            </div>
+    width: 28px;
+    height: 28px;
 
+    top: 50%;
+    right: 6px;
 
-                            <div class="cloud-desktop">
+    transform:
+        translateY(-50%);
 
-                                <div class="cloud-window">
+    display: none;
 
-                                    <div class="cloud-window-header">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
+    border: 0;
+    border-radius: 50%;
 
-                                    <div class="cloud-window-content">
+    background: transparent;
 
-                                        <strong>
-                                            Your AXEN PC.
-                                        </strong>
+    color: #666;
 
-                                        <small>
-                                            Anywhere.
-                                        </small>
+    cursor: pointer;
 
-                                    </div>
+    font-size: 19px;
+}
 
-                                </div>
+.clear-search:hover {
+    background: #e2e2e2;
+}
 
-                            </div>
 
-                        </div>
 
-                    </div>
+/* =========================================
+   NAV
+========================================= */
 
+.desktop-nav {
+    margin-left: auto;
 
-                    <div class="featured-info">
+    display: flex;
+    align-items: center;
 
-                        <div>
+    gap: 5px;
+}
 
-                            <p class="product-status">
-                                COMING SOON
-                            </p>
+.desktop-nav a {
+    padding:
+        10px
+        11px;
 
-                            <h3>
-                                AXEN Virtual Computer
-                            </h3>
+    border-radius: 7px;
 
-                            <p>
-                                A subscription cloud PC designed
-                                to give you access to a powerful
-                                virtual computer from supported devices.
-                            </p>
+    color: #333;
 
-                        </div>
+    font-size: 13px;
+    font-weight: 600;
+}
 
+.desktop-nav a:hover {
+    background: #f1f1f1;
 
-                        <button
-                            type="button"
-                            class="product-button"
-                            data-message="AXEN Virtual Computer is a future subscription cloud PC service."
-                        >
-                            Learn more
-                            <span>→</span>
-                        </button>
+    color: black;
+}
 
-                    </div>
+.desktop-nav a.active {
+    color: black;
 
-                </article>
+    font-weight: 800;
+}
 
-            </div>
 
-        </section>
 
+/* =========================================
+   HEADER ACTIONS
+========================================= */
 
+.header-actions {
+    display: flex;
+    align-items: center;
 
-        <!-- =================================
-             ALL PRODUCTS
-        ================================== -->
+    gap: 3px;
+}
 
-        <section class="shop-section products-section">
+.icon-button,
+.menu-button {
+    width: 42px;
+    height: 42px;
 
-            <div class="section-heading">
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-                <div>
+    border: 0;
+    border-radius: 50%;
 
-                    <p class="section-label">
-                        EXPLORE AXEN
-                    </p>
+    background: transparent;
 
-                    <h2>
-                        Products and services.
-                    </h2>
+    cursor: pointer;
+}
 
-                </div>
+.icon-button:hover,
+.menu-button:hover {
+    background: #f0f0f0;
+}
 
-            </div>
+.icon-button svg {
+    width: 21px;
+    height: 21px;
 
+    fill: none;
 
-            <div
-                id="productGrid"
-                class="product-grid"
-            >
+    stroke: #111;
+    stroke-width: 1.7;
 
-                <!-- AXEN KEYBOARDS -->
-                <article
-                    class="product-card product-item"
-                    data-category="hardware"
-                    data-search="axen keyboards keyboard hardware gaming typing mechanical"
-                >
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
 
-                    <div class="product-card-visual simple-keyboard">
+.menu-button {
+    display: none;
 
-                        <div class="mini-keyboard">
+    flex-direction: column;
 
-                            <span>AXEN</span>
+    gap: 4px;
+}
 
-                        </div>
+.menu-button span {
+    width: 18px;
+    height: 1.5px;
 
-                    </div>
+    background: #111;
+}
 
+.mobile-nav {
+    padding:
+        8px
+        20px
+        18px;
 
-                    <div class="product-card-info">
+    background: white;
 
-                        <p class="product-status">
-                            IN DEVELOPMENT
-                        </p>
+    border-top:
+        1px solid
+        #ededed;
+}
 
-                        <h3>
-                            AXEN Keyboards
-                        </h3>
+.mobile-nav a {
+    display: block;
 
-                        <p>
-                            AXEN mechanical keyboard hardware.
-                        </p>
+    padding:
+        13px
+        3px;
 
-                        <button
-                            type="button"
-                            class="product-button"
-                            data-message="AXEN keyboards are currently in development."
-                        >
-                            View product
-                            <span>→</span>
-                        </button>
+    border-bottom:
+        1px solid
+        #ededed;
 
-                    </div>
+    font-size: 14px;
+    font-weight: 600;
+}
 
-                </article>
+.mobile-nav a.active {
+    font-weight: 800;
+}
 
 
 
-                <!-- AXEN COMPUTERS -->
-                <article
-                    class="product-card product-item"
-                    data-category="hardware"
-                    data-search="axen computers laptops desktops pc hardware"
-                >
+/* =========================================
+   SHOP HERO
+========================================= */
 
-                    <div class="product-card-visual computer-visual">
+.shop-hero {
+    min-height: 450px;
 
-                        <div class="laptop">
+    display: flex;
+    align-items: center;
 
-                            <div class="laptop-screen">
+    background:
+        linear-gradient(
+            115deg,
+            #050505,
+            #111
+        );
 
-                                <img
-                                    src="axen-logo.png"
-                                    alt=""
-                                >
+    color: white;
+}
 
-                            </div>
+.shop-hero-inner {
+    width:
+        min(
+            calc(100% - 50px),
+            var(--page-width)
+        );
 
-                            <div class="laptop-base"></div>
+    margin: 0 auto;
 
-                        </div>
+    padding:
+        95px
+        0;
+}
 
-                    </div>
+.eyebrow,
+.section-label {
+    margin:
+        0
+        0
+        18px;
 
+    color: #777;
 
-                    <div class="product-card-info">
+    font-size: 11px;
+    font-weight: 800;
 
-                        <p class="product-status">
-                            FUTURE PRODUCT
-                        </p>
+    letter-spacing: 0.18em;
+}
 
-                        <h3>
-                            AXEN Computers
-                        </h3>
+.shop-hero .eyebrow {
+    color: #999;
+}
 
-                        <p>
-                            Future AXEN laptops and desktops.
-                        </p>
+.shop-hero h1 {
+    max-width: 900px;
 
-                        <button
-                            type="button"
-                            class="product-button"
-                            data-message="AXEN computers are planned for future development."
-                        >
-                            Learn more
-                            <span>→</span>
-                        </button>
+    margin: 0;
 
-                    </div>
+    font-size:
+        clamp(
+            55px,
+            7vw,
+            95px
+        );
 
-                </article>
+    line-height: 0.95;
 
+    letter-spacing: -0.055em;
 
+    font-weight: 650;
+}
 
-                <!-- VIRTUAL COMPUTER -->
-                <article
-                    class="product-card product-item"
-                    data-category="virtual"
-                    data-search="virtual computer cloud pc axen subscription remote apexcloud"
-                >
+.shop-hero h1 span {
+    display: block;
 
-                    <div class="product-card-visual cloud-card-visual">
+    color: #bcbcbc;
+}
 
-                        <div class="cloud-symbol">
+.shop-hero-description {
+    max-width: 610px;
 
-                            <div class="cloud-circle one"></div>
-                            <div class="cloud-circle two"></div>
-                            <div class="cloud-circle three"></div>
+    margin:
+        26px
+        0
+        0;
 
-                            <div class="cloud-base"></div>
+    color: #aaa;
 
-                            <span>
-                                AXEN
-                            </span>
+    font-size: 18px;
+    line-height: 1.65;
+}
 
-                        </div>
 
-                    </div>
 
+/* =========================================
+   CATEGORY BAR
+========================================= */
 
-                    <div class="product-card-info">
+.category-bar {
+    position: sticky;
 
-                        <p class="product-status">
-                            COMING SOON
-                        </p>
+    top: var(--header-height);
 
-                        <h3>
-                            AXEN Virtual Computer
-                        </h3>
+    z-index: 800;
 
-                        <p>
-                            Subscription-based virtual computing.
-                        </p>
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.96
+        );
 
-                        <button
-                            type="button"
-                            class="product-button"
-                            data-message="AXEN Virtual Computer is planned as a subscription service."
-                        >
-                            Learn more
-                            <span>→</span>
-                        </button>
+    backdrop-filter: blur(15px);
 
-                    </div>
+    border-bottom:
+        1px solid
+        #e5e5e5;
+}
 
-                </article>
+.category-inner {
+    width:
+        min(
+            calc(100% - 50px),
+            var(--page-width)
+        );
 
+    min-height: 65px;
 
+    margin: 0 auto;
 
-                <!-- AXEN OS -->
-                <article
-                    class="product-card product-item"
-                    data-category="software"
-                    data-search="axen os operating system software axis"
-                >
+    display: flex;
+    align-items: center;
 
-                    <div class="product-card-visual os-visual">
+    gap: 8px;
+}
 
-                        <div class="os-window">
+.category-button {
+    padding:
+        9px
+        14px;
 
-                            <div class="os-window-content">
+    border:
+        1px solid
+        transparent;
 
-                                <img
-                                    src="axen-logo.png"
-                                    alt=""
-                                >
+    border-radius: 20px;
 
-                            </div>
+    background: transparent;
 
-                            <div class="os-taskbar">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
+    cursor: pointer;
 
-                        </div>
+    color: #555;
 
-                    </div>
+    font-size: 12px;
+    font-weight: 700;
+}
 
+.category-button:hover {
+    background: #f3f3f3;
+}
 
-                    <div class="product-card-info">
+.category-button.active {
+    border-color: #111;
 
-                        <p class="product-status">
-                            IN DEVELOPMENT
-                        </p>
+    background: #111;
 
-                        <h3>
-                            AXEN OS
-                        </h3>
+    color: white;
+}
 
-                        <p>
-                            The future AXEN operating experience.
-                        </p>
 
-                        <a
-                            href="index.html#axen-os"
-                            class="product-button"
-                        >
-                            Explore AXEN OS
-                            <span>→</span>
-                        </a>
 
-                    </div>
+/* =========================================
+   MAIN SHOP SECTION
+========================================= */
 
-                </article>
+.shop-section {
+    width:
+        min(
+            calc(100% - 50px),
+            var(--page-width)
+        );
 
+    margin: 0 auto;
 
+    padding:
+        100px
+        0;
+}
 
-                <!-- APPAREL -->
-                <article
-                    class="product-card product-item"
-                    data-category="merch"
-                    data-search="axen apparel shirts hoodies merch clothing"
-                >
+.section-heading {
+    margin-bottom: 40px;
+}
 
-                    <div class="product-card-visual apparel-visual">
+.section-heading h2 {
+    margin: 0;
 
-                        <div class="shirt-shape">
+    font-size:
+        clamp(
+            37px,
+            4.5vw,
+            58px
+        );
 
-                            <span>
-                                AXEN
-                            </span>
+    line-height: 1.05;
 
-                        </div>
+    letter-spacing: -0.045em;
+}
 
-                    </div>
 
 
-                    <div class="product-card-info">
+/* =========================================
+   FEATURED
+========================================= */
 
-                        <p class="product-status">
-                            COMING SOON
-                        </p>
+.featured-grid {
+    display: grid;
 
-                        <h3>
-                            AXEN Apparel
-                        </h3>
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
 
-                        <p>
-                            Minimal AXEN clothing and apparel.
-                        </p>
+    gap: 20px;
+}
 
-                        <button
-                            type="button"
-                            class="product-button"
-                            data-message="AXEN Apparel is coming soon."
-                        >
-                            Explore apparel
-                            <span>→</span>
-                        </button>
+.featured-card {
+    overflow: hidden;
 
-                    </div>
+    border:
+        1px solid
+        #dedede;
 
-                </article>
+    border-radius: 16px;
 
+    background: #f6f6f6;
+}
 
+.featured-visual {
+    min-height: 370px;
 
-                <!-- ACCESSORIES -->
-                <article
-                    class="product-card product-item"
-                    data-category="merch"
-                    data-search="axen accessories merch stickers desk mats mouse pads"
-                >
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-                    <div class="product-card-visual accessories-visual">
+.featured-info {
+    min-height: 210px;
 
-                        <div class="desk-mat">
+    padding:
+        28px
+        30px
+        32px;
 
-                            <img
-                                src="axen-logo.png"
-                                alt=""
-                            >
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
 
-                        </div>
+    gap: 25px;
+}
 
-                    </div>
+.product-status {
+    margin: 0;
 
+    color: #777;
 
-                    <div class="product-card-info">
+    font-size: 10px;
+    font-weight: 800;
 
-                        <p class="product-status">
-                            COMING SOON
-                        </p>
+    letter-spacing: 0.13em;
+}
 
-                        <h3>
-                            AXEN Accessories
-                        </h3>
+.featured-info h3,
+.product-card-info h3 {
+    margin:
+        9px
+        0
+        9px;
 
-                        <p>
-                            Desk mats, stickers, and future accessories.
-                        </p>
+    font-size: 27px;
 
-                        <button
-                            type="button"
-                            class="product-button"
-                            data-message="AXEN Accessories are coming soon."
-                        >
-                            Explore accessories
-                            <span>→</span>
-                        </button>
+    letter-spacing: -0.025em;
+}
 
-                    </div>
+.featured-info p:not(.product-status),
+.product-card-info p:not(.product-status) {
+    max-width: 500px;
 
-                </article>
+    margin: 0;
 
-            </div>
+    color: #666;
 
+    font-size: 14px;
+    line-height: 1.65;
+}
 
-            <div
-                id="noResults"
-                class="no-results"
-                hidden
-            >
+.product-button {
+    flex: 0 0 auto;
 
-                <h3>
-                    No AXEN products found.
-                </h3>
+    padding: 0;
 
-                <p>
-                    Try another search or category.
-                </p>
+    display: inline-flex;
+    align-items: center;
 
-            </div>
+    gap: 8px;
 
-        </section>
+    border: 0;
 
+    background: transparent;
 
+    cursor: pointer;
 
-        <!-- =================================
-             BOTTOM CTA
-        ================================== -->
+    color: #111;
 
-        <section class="shop-cta">
+    font-size: 13px;
+    font-weight: 700;
+}
 
-            <div>
+.product-button span {
+    transition:
+        transform 150ms ease;
+}
 
-                <p class="section-label dark-label">
-                    AXEN TECHNOLOGIES
-                </p>
+.product-button:hover span {
+    transform:
+        translateX(3px);
+}
 
-                <h2>
-                    More is being built.
-                </h2>
 
-                <p>
-                    AXEN products and services are currently
-                    in development. The shop will expand as
-                    new technology becomes available.
-                </p>
 
-            </div>
+/* =========================================
+   KEYBOARD VISUAL
+========================================= */
 
+.keyboard-visual {
+    background:
+        linear-gradient(
+            145deg,
+            #ededed,
+            #c9c9c9
+        );
+}
 
-            <a
-                href="index.html"
-                class="light-button"
-            >
-                Back to AXEN
-            </a>
+.keyboard {
+    width: min(75%, 540px);
 
-        </section>
+    padding: 22px;
 
-    </main>
+    transform:
+        perspective(950px)
+        rotateX(58deg)
+        rotateZ(-5deg);
 
+    border:
+        1px solid
+        #303030;
 
+    border-radius: 11px;
 
-    <!-- =====================================
-         FOOTER
-    ====================================== -->
+    background:
+        linear-gradient(
+            160deg,
+            #282828,
+            #090909
+        );
 
-    <footer class="site-footer">
+    box-shadow:
+        0 40px 55px
+        rgba(
+            0,
+            0,
+            0,
+            0.28
+        );
+}
 
-        <div class="footer-top">
+.keyboard-name {
+    margin-bottom: 13px;
 
-            <img
-                src="axen-logo.png"
-                alt="AXEN"
-                class="footer-logo"
-            >
+    color: #c8c8c8;
 
+    font-size: 11px;
+    font-weight: 800;
 
-            <div class="footer-columns">
+    letter-spacing: 0.18em;
+}
 
-                <div>
+.keyboard-keys {
+    display: grid;
 
-                    <h4>
-                        PRODUCTS
-                    </h4>
+    grid-template-columns:
+        repeat(5, 1fr);
 
-                    <a href="shop.html">
-                        Shop
-                    </a>
+    gap: 8px;
+}
 
-                    <a href="index.html#axen-os">
-                        AXEN OS
-                    </a>
+.keyboard-keys span {
+    aspect-ratio: 1.35;
 
-                </div>
+    border:
+        1px solid
+        #3a3a3a;
 
+    border-radius: 4px;
 
-                <div>
+    background:
+        linear-gradient(
+            #242424,
+            #111
+        );
+}
 
-                    <h4>
-                        COMPANY
-                    </h4>
 
-                    <a href="index.html#about">
-                        About
-                    </a>
 
-                    <a href="index.html#support">
-                        Support
-                    </a>
+/* =========================================
+   VIRTUAL COMPUTER VISUAL
+========================================= */
 
-                </div>
+.virtual-visual {
+    padding: 40px;
 
-            </div>
+    background:
+        radial-gradient(
+            circle at 70% 20%,
+            #303030,
+            #111 55%,
+            #050505
+        );
+}
 
-        </div>
+.cloud-display {
+    width: min(560px, 90%);
 
+    overflow: hidden;
 
-        <div class="footer-bottom">
+    border:
+        1px solid
+        #303030;
 
-            <span>
-                © 2026 AXEN Technologies. All rights reserved.
-            </span>
+    border-radius: 12px;
 
-            <span>
-                Products shown may be in development.
-            </span>
+    background: #0b0b0b;
 
-        </div>
+    box-shadow:
+        0 30px 70px
+        rgba(
+            0,
+            0,
+            0,
+            0.42
+        );
+}
 
-    </footer>
+.cloud-display-top {
+    height: 54px;
 
+    padding:
+        0
+        18px;
 
+    display: flex;
+    align-items: center;
 
-    <!-- =====================================
-         CART
-    ====================================== -->
+    gap: 15px;
 
-    <div
-        id="cartBackdrop"
-        class="cart-backdrop"
-        hidden
-    ></div>
+    border-bottom:
+        1px solid
+        #252525;
 
+    background: #121212;
+}
 
-    <aside
-        id="cartDrawer"
-        class="cart-drawer"
-        aria-hidden="true"
-    >
+.cloud-display-top img {
+    width: 82px;
+}
 
-        <div class="cart-header">
+.cloud-display-top span {
+    margin-left: auto;
 
-            <h2>
-                Your Cart
-            </h2>
+    color: #777;
 
-            <button
-                id="closeCart"
-                class="close-button"
-                type="button"
-                aria-label="Close cart"
-            >
-                ×
-            </button>
+    font-size: 9px;
+    font-weight: 800;
 
-        </div>
+    letter-spacing: 0.15em;
+}
 
+.cloud-desktop {
+    min-height: 240px;
 
-        <div class="cart-empty">
+    padding: 30px;
 
-            <div class="cart-icon">
-                □
-            </div>
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-            <h3>
-                Your cart is empty.
-            </h3>
+.cloud-window {
+    width: 75%;
 
-            <p>
-                AXEN products will appear here
-                when purchasing becomes available.
-            </p>
+    overflow: hidden;
 
-        </div>
+    border:
+        1px solid
+        #3a3a3a;
 
-    </aside>
+    border-radius: 8px;
 
+    background: #161616;
+}
 
+.cloud-window-header {
+    height: 34px;
 
-    <!-- =====================================
-         NOTICE
-    ====================================== -->
+    padding:
+        0
+        12px;
 
-    <div
-        id="noticeModal"
-        class="notice-modal"
-        hidden
-    >
+    display: flex;
+    align-items: center;
 
-        <div class="notice-card">
+    gap: 6px;
 
-            <button
-                id="closeNotice"
-                class="close-button notice-close"
-                type="button"
-                aria-label="Close"
-            >
-                ×
-            </button>
+    background: #202020;
+}
 
-            <img
-                src="axen-logo.png"
-                alt="AXEN"
-                class="notice-logo"
-            >
+.cloud-window-header span {
+    width: 7px;
+    height: 7px;
 
-            <h2>
-                AXEN
-            </h2>
+    border-radius: 50%;
 
-            <p id="noticeText"></p>
+    background: #555;
+}
 
-            <button
-                id="noticeOkay"
-                type="button"
-                class="dark-button"
-            >
-                Got it
-            </button>
+.cloud-window-content {
+    min-height: 140px;
 
-        </div>
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-    </div>
+    color: white;
+}
 
+.cloud-window-content strong {
+    font-size: 25px;
 
-    <script src="shop.js?v=1"></script>
+    letter-spacing: -0.03em;
+}
 
-</body>
-</html>
+.cloud-window-content small {
+    margin-top: 5px;
+
+    color: #888;
+}
+
+
+
+/* =========================================
+   PRODUCT GRID
+========================================= */
+
+.products-section {
+    padding-top: 20px;
+}
+
+.product-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    gap: 20px;
+}
+
+.product-card {
+    overflow: hidden;
+
+    border:
+        1px solid
+        #dfdfdf;
+
+    border-radius: 15px;
+
+    background: #f6f6f6;
+}
+
+.product-card-visual {
+    min-height: 280px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.product-card-info {
+    padding:
+        25px
+        27px
+        28px;
+}
+
+.product-card-info .product-button {
+    margin-top: 20px;
+}
+
+
+
+/* MINI KEYBOARD */
+
+.simple-keyboard {
+    background:
+        linear-gradient(
+            145deg,
+            #ececec,
+            #d1d1d1
+        );
+}
+
+.mini-keyboard {
+    width: 68%;
+    height: 110px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform:
+        perspective(900px)
+        rotateX(55deg)
+        rotateZ(-5deg);
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #272727,
+            #080808
+        );
+
+    box-shadow:
+        0 30px 40px
+        rgba(
+            0,
+            0,
+            0,
+            0.25
+        );
+
+    color: #aaa;
+
+    font-weight: 800;
+
+    letter-spacing: 0.2em;
+}
+
+
+
+/* COMPUTER */
+
+.computer-visual {
+    background:
+        linear-gradient(
+            145deg,
+            #eeeeee,
+            #d4d4d4
+        );
+}
+
+.laptop {
+    width: 72%;
+}
+
+.laptop-screen {
+    aspect-ratio: 16 / 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        7px solid
+        #222;
+
+    border-radius:
+        9px
+        9px
+        4px
+        4px;
+
+    background:
+        radial-gradient(
+            circle at 70% 20%,
+            #272727,
+            #080808
+        );
+}
+
+.laptop-screen img {
+    width: 42%;
+}
+
+.laptop-base {
+    width: 112%;
+    height: 12px;
+
+    margin-left: -6%;
+
+    border-radius:
+        2px
+        2px
+        10px
+        10px;
+
+    background:
+        linear-gradient(
+            #777,
+            #333
+        );
+}
+
+
+
+/* CLOUD */
+
+.cloud-card-visual {
+    background:
+        linear-gradient(
+            145deg,
+            #111,
+            #050505
+        );
+}
+
+.cloud-symbol {
+    position: relative;
+
+    width: 180px;
+    height: 120px;
+}
+
+.cloud-circle {
+    position: absolute;
+
+    border-radius: 50%;
+
+    background: #292929;
+
+    border:
+        1px solid
+        #3b3b3b;
+}
+
+.cloud-circle.one {
+    width: 80px;
+    height: 80px;
+
+    left: 18px;
+    top: 25px;
+}
+
+.cloud-circle.two {
+    width: 100px;
+    height: 100px;
+
+    left: 58px;
+    top: 5px;
+}
+
+.cloud-circle.three {
+    width: 70px;
+    height: 70px;
+
+    right: 0;
+    top: 35px;
+}
+
+.cloud-base {
+    position: absolute;
+
+    width: 150px;
+    height: 55px;
+
+    left: 15px;
+    bottom: 0;
+
+    border:
+        1px solid
+        #3b3b3b;
+
+    border-radius: 35px;
+
+    background: #292929;
+}
+
+.cloud-symbol span {
+    position: absolute;
+
+    z-index: 2;
+
+    left: 50%;
+    top: 58%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    color: #aaa;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+}
+
+
+
+/* OS */
+
+.os-visual {
+    background:
+        linear-gradient(
+            145deg,
+            #101010,
+            #050505
+        );
+}
+
+.os-window {
+    width: 76%;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        #343434;
+
+    border-radius: 8px;
+
+    background: #101010;
+
+    box-shadow:
+        0 25px 50px
+        rgba(
+            0,
+            0,
+            0,
+            0.4
+        );
+}
+
+.os-window-content {
+    min-height: 165px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.os-window-content img {
+    width: 42%;
+}
+
+.os-taskbar {
+    height: 34px;
+
+    padding:
+        0
+        10px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    border-top:
+        1px solid
+        #262626;
+
+    background: #171717;
+}
+
+.os-taskbar span {
+    width: 20px;
+    height: 20px;
+
+    border-radius: 4px;
+
+    background: #292929;
+}
+
+
+
+/* APPAREL */
+
+.apparel-visual {
+    background:
+        linear-gradient(
+            145deg,
+            #171717,
+            #050505
+        );
+}
+
+.shirt-shape {
+    width: 185px;
+    height: 220px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    clip-path:
+        polygon(
+            25% 4%,
+            38% 0,
+            50% 10%,
+            62% 0,
+            75% 4%,
+            100% 21%,
+            85% 38%,
+            77% 31%,
+            77% 100%,
+            23% 100%,
+            23% 31%,
+            15% 38%,
+            0 21%
+        );
+
+    background:
+        linear-gradient(
+            135deg,
+            #242424,
+            #070707
+        );
+
+    color: #bcbcbc;
+
+    font-size: 16px;
+    font-weight: 800;
+
+    letter-spacing: 0.17em;
+}
+
+
+
+/* ACCESSORIES */
+
+.accessories-visual {
+    background:
+        linear-gradient(
+            145deg,
+            #eeeeee,
+            #d3d3d3
+        );
+}
+
+.desk-mat {
+    width: 72%;
+    aspect-ratio: 2.2 / 1;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    padding: 18px;
+
+    transform:
+        perspective(900px)
+        rotateX(54deg)
+        rotateZ(-4deg);
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #151515,
+            #050505
+        );
+
+    box-shadow:
+        0 30px 45px
+        rgba(
+            0,
+            0,
+            0,
+            0.25
+        );
+}
+
+.desk-mat img {
+    width: 28%;
+}
+
+
+
+/* =========================================
+   NO RESULTS
+========================================= */
+
+.no-results {
+    padding:
+        80px
+        20px;
+
+    text-align: center;
+}
+
+.no-results h3 {
+    margin: 0;
+
+    font-size: 25px;
+}
+
+.no-results p {
+    margin:
+        10px
+        0
+        0;
+
+    color: #777;
+}
+
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.shop-cta {
+    min-height: 360px;
+
+    padding:
+        80px
+        max(
+            35px,
+            calc(
+                (100vw - var(--page-width)) / 2
+                + 25px
+            )
+        );
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 50px;
+
+    background: #050505;
+
+    color: white;
+}
+
+.dark-label {
+    color: #7b7b7b;
+}
+
+.shop-cta h2 {
+    margin: 0;
+
+    font-size:
+        clamp(
+            38px,
+            5vw,
+            62px
+        );
+
+    line-height: 1;
+
+    letter-spacing: -0.05em;
+}
+
+.shop-cta p:not(.section-label) {
+    max-width: 620px;
+
+    margin:
+        20px
+        0
+        0;
+
+    color: #999;
+
+    line-height: 1.7;
+}
+
+.light-button,
+.dark-button {
+    min-height: 46px;
+
+    padding:
+        0
+        22px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.light-button {
+    background: white;
+
+    color: black;
+}
+
+.light-button:hover {
+    background: #e5e5e5;
+}
+
+.dark-button {
+    background: black;
+
+    color: white;
+}
+
+.dark-button:hover {
+    background: #222;
+}
+
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+    padding:
+        60px
+        max(
+            30px,
+            calc(
+                (100vw - var(--page-width)) / 2
+                + 25px
+            )
+        )
+        24px;
+
+    background: #050505;
+
+    color: white;
+
+    border-top:
+        1px solid
+        #1d1d1d;
+}
+
+.footer-top {
+    min-height: 210px;
+
+    display: flex;
+    justify-content: space-between;
+
+    gap: 60px;
+}
+
+.footer-logo {
+    width: 140px;
+    height: fit-content;
+}
+
+.footer-columns {
+    display: flex;
+
+    gap: 100px;
+}
+
+.footer-columns h4 {
+    margin:
+        0
+        0
+        14px;
+
+    color: #707070;
+
+    font-size: 10px;
+
+    letter-spacing: 0.13em;
+}
+
+.footer-columns a {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #bcbcbc;
+
+    font-size: 13px;
+}
+
+.footer-columns a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    padding-top: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    border-top:
+        1px solid
+        #222;
+
+    color: #696969;
+
+    font-size: 11px;
+}
+
+
+
+/* =========================================
+   CART
+========================================= */
+
+.cart-backdrop {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1800;
+
+    background:
+        rgba(
+            0,
+            0,
+            0,
+            0.42
+        );
+}
+
+.cart-drawer {
+    position: fixed;
+
+    width: min(430px, 100%);
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 1900;
+
+    padding: 26px;
+
+    transform:
+        translateX(100%);
+
+    background: white;
+
+    box-shadow:
+        -20px
+        0
+        60px
+        rgba(
+            0,
+            0,
+            0,
+            0.14
+        );
+
+    transition:
+        transform 210ms ease;
+}
+
+.cart-drawer.open {
+    transform:
+        translateX(0);
+}
+
+.cart-header {
+    padding-bottom: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom:
+        1px solid
+        #e5e5e5;
+}
+
+.cart-header h2 {
+    margin: 0;
+
+    font-size: 22px;
+}
+
+.close-button {
+    width: 40px;
+    height: 40px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: #f1f1f1;
+
+    cursor: pointer;
+
+    font-size: 23px;
+}
+
+.close-button:hover {
+    background: #e3e3e3;
+}
+
+.cart-empty {
+    height: calc(100% - 70px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.cart-icon {
+    width: 60px;
+    height: 60px;
+
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid
+        #d5d5d5;
+
+    border-radius: 50%;
+
+    color: #777;
+
+    font-size: 24px;
+}
+
+.cart-empty h3 {
+    margin: 0;
+
+    font-size: 20px;
+}
+
+.cart-empty p {
+    max-width: 275px;
+
+    margin:
+        10px
+        0
+        24px;
+
+    color: #777;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+
+/* =========================================
+   NOTICE
+========================================= */
+
+.notice-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 3000;
+
+    padding: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(
+            0,
+            0,
+            0,
+            0.48
+        );
+}
+
+.notice-card {
+    position: relative;
+
+    width: min(430px, 100%);
+
+    padding:
+        45px
+        34px
+        35px;
+
+    border-radius: 15px;
+
+    background: white;
+
+    box-shadow:
+        0 30px 90px
+        rgba(
+            0,
+            0,
+            0,
+            0.25
+        );
+
+    text-align: center;
+}
+
+.notice-close {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+}
+
+.notice-logo {
+    width: 130px;
+
+    margin:
+        0
+        auto
+        25px;
+}
+
+.notice-card h2 {
+    margin: 0;
+
+    font-size: 24px;
+}
+
+.notice-card p {
+    margin:
+        12px
+        0
+        25px;
+
+    color: #666;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+
+/* =========================================
+   FILTERED STATE
+========================================= */
+
+.product-item.filtered-out {
+    display: none;
+}
+
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .desktop-nav a {
+        padding:
+            10px
+            8px;
+    }
+
+    .header-search {
+        width: 190px;
+
+        flex-basis: 190px;
+    }
+
+    .product-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .header-search {
+        margin-left: auto;
+
+        width: min(270px, 38vw);
+
+        flex-basis: min(270px, 38vw);
+    }
+
+    .menu-button {
+        display: inline-flex;
+    }
+
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 680px) {
+
+    :root {
+        --header-height: 64px;
+    }
+
+    .header-inner {
+        width:
+            calc(100% - 24px);
+    }
+
+    .brand-logo {
+        width: 95px;
+    }
+
+    .header-search {
+        display: none;
+    }
+
+    .header-actions {
+        margin-left: auto;
+    }
+
+    .shop-hero {
+        min-height: 410px;
+    }
+
+    .shop-hero-inner {
+        width:
+            calc(100% - 34px);
+
+        padding:
+            75px
+            0;
+    }
+
+    .shop-hero h1 {
+        font-size:
+            clamp(
+                52px,
+                16vw,
+                74px
+            );
+    }
+
+    .shop-hero-description {
+        font-size: 16px;
+    }
+
+    .category-inner {
+        width:
+            calc(100% - 24px);
+
+        overflow-x: auto;
+    }
+
+    .category-button {
+        flex: 0 0 auto;
+    }
+
+    .shop-section {
+        width:
+            calc(100% - 34px);
+
+        padding:
+            75px
+            0;
+    }
+
+    .featured-visual {
+        min-height: 290px;
+    }
+
+    .featured-info {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .shop-cta {
+        padding:
+            65px
+            24px;
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .footer-top {
+        flex-direction: column;
+    }
+
+    .footer-columns {
+        width: 100%;
+
+        justify-content: space-between;
+
+        gap: 40px;
+    }
+
+    .footer-bottom {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+        scroll-behavior: auto !important;
+
+        transition: none !important;
+    }
+
+}
