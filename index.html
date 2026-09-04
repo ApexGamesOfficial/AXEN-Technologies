@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -15,30 +17,46 @@
         content="AXEN Technologies builds hardware, software, and technology for what's next."
     >
 
-    <link rel="stylesheet" href="style.css?v=2">
+    <link
+        rel="stylesheet"
+        href="style.css?v=2"
+    >
+
 </head>
+
 
 <body>
 
-    <!-- HEADER -->
+
+    <!-- =====================================
+         HEADER
+    ====================================== -->
+
     <header class="site-header">
 
         <div class="header-inner">
 
+
+            <!-- BRAND -->
+
             <a
-                href="#home"
+                href="index.html"
                 class="brand"
                 aria-label="AXEN Home"
             >
+
                 <img
                     src="axen-logo.png"
                     alt="AXEN"
                     class="brand-logo"
                 >
+
             </a>
 
 
+
             <!-- SEARCH -->
+
             <div class="header-search">
 
                 <svg
@@ -46,6 +64,7 @@
                     viewBox="0 0 24 24"
                     aria-hidden="true"
                 >
+
                     <circle
                         cx="11"
                         cy="11"
@@ -58,7 +77,9 @@
                         x2="21"
                         y2="21"
                     ></line>
+
                 </svg>
+
 
                 <input
                     id="siteSearch"
@@ -67,6 +88,7 @@
                     autocomplete="off"
                     aria-label="Search AXEN"
                 >
+
 
                 <button
                     id="clearSearch"
@@ -77,6 +99,7 @@
                     ×
                 </button>
 
+
                 <div
                     id="searchResults"
                     class="search-results"
@@ -86,21 +109,47 @@
             </div>
 
 
-            <!-- NAV -->
+
+            <!-- NAVIGATION -->
+
             <nav
                 class="desktop-nav"
                 aria-label="Main navigation"
             >
-                <a href="#home">Home</a>
-              <a href="shop.html">Shop</a>
-                <a href="#axen-os">AXEN OS</a>
-                <a href="#support">Support</a>
-                <a href="#about">About</a>
+
+                <a
+                    href="index.html"
+                    class="active"
+                >
+                    Home
+                </a>
+
+                <a href="shop.html">
+                    Shop
+                </a>
+
+                <a href="axen-os.html">
+                    AXEN OS
+                </a>
+
+                <a href="support.html">
+                    Support
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
             </nav>
 
 
-            <!-- ACTIONS -->
+
+            <!-- HEADER ACTIONS -->
+
             <div class="header-actions">
+
+
+                <!-- CART -->
 
                 <button
                     id="cartButton"
@@ -108,11 +157,15 @@
                     type="button"
                     aria-label="Open cart"
                 >
+
                     <svg
                         viewBox="0 0 24 24"
                         aria-hidden="true"
                     >
-                        <path d="M3 4h2l2.1 10.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L20 8H7"></path>
+
+                        <path
+                            d="M3 4h2l2.1 10.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L20 8H7"
+                        ></path>
 
                         <circle
                             cx="10"
@@ -125,9 +178,14 @@
                             cy="19"
                             r="1.3"
                         ></circle>
+
                     </svg>
+
                 </button>
 
+
+
+                <!-- ACCOUNT -->
 
                 <button
                     id="accountButton"
@@ -135,10 +193,12 @@
                     type="button"
                     aria-label="AXEN Account"
                 >
+
                     <svg
                         viewBox="0 0 24 24"
                         aria-hidden="true"
                     >
+
                         <circle
                             cx="12"
                             cy="8"
@@ -148,9 +208,14 @@
                         <path
                             d="M4.5 21c.8-4.2 3.3-6.5 7.5-6.5s6.7 2.3 7.5 6.5"
                         ></path>
+
                     </svg>
+
                 </button>
 
+
+
+                <!-- MOBILE MENU -->
 
                 <button
                     id="menuButton"
@@ -159,9 +224,11 @@
                     aria-label="Open menu"
                     aria-expanded="false"
                 >
+
                     <span></span>
                     <span></span>
                     <span></span>
+
                 </button>
 
             </div>
@@ -169,27 +236,57 @@
         </div>
 
 
+
         <!-- MOBILE NAV -->
+
         <nav
             id="mobileNav"
             class="mobile-nav"
             aria-label="Mobile navigation"
             hidden
         >
-            <a href="#home">Home</a>
-   <a href="shop.html">Shop</a>
-            <a href="#axen-os">AXEN OS</a>
-            <a href="#support">Support</a>
-            <a href="#about">About</a>
+
+            <a
+                href="index.html"
+                class="active"
+            >
+                Home
+            </a>
+
+            <a href="shop.html">
+                Shop
+            </a>
+
+            <a href="axen-os.html">
+                AXEN OS
+            </a>
+
+            <a href="support.html">
+                Support
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
         </nav>
 
     </header>
 
 
 
+    <!-- =====================================
+         MAIN
+    ====================================== -->
+
     <main>
 
-        <!-- HERO -->
+
+
+        <!-- =================================
+             HERO
+        ================================== -->
+
         <section
             id="home"
             class="hero"
@@ -197,19 +294,27 @@
             data-search-keywords="AXEN Technologies technology hardware software"
         >
 
-            <div class="hero-rings" aria-hidden="true"></div>
+            <div
+                class="hero-rings"
+                aria-hidden="true"
+            ></div>
 
 
             <div class="hero-content">
+
 
                 <p class="eyebrow">
                     AXEN TECHNOLOGIES
                 </p>
 
+
                 <h1>
                     Technology,
-                    <span>redefined.</span>
+                    <span>
+                        redefined.
+                    </span>
                 </h1>
+
 
                 <p class="hero-description">
                     Building hardware and software designed for
@@ -217,45 +322,57 @@
                 </p>
 
 
+
                 <div class="hero-actions">
 
+
                     <a
-                        href="#shop"
+                        href="shop.html"
                         class="button button-primary"
                     >
                         Explore AXEN
                     </a>
 
+
                     <a
-                        href="#axen-os"
+                        href="axen-os.html"
                         class="button button-secondary"
                     >
                         Discover AXEN OS
                     </a>
+
 
                 </div>
 
             </div>
 
 
+
             <div class="hero-signature">
+
                 <span></span>
+
                 AXEN
+
             </div>
 
         </section>
 
 
 
-        <!-- SHOP -->
+        <!-- =================================
+             SHOP
+        ================================== -->
+
         <section
             id="shop"
             class="section"
             data-search-title="Shop"
-            data-search-keywords="AXEN shop keyboards merch products"
+            data-search-keywords="AXEN shop keyboards merch products virtual computer"
         >
 
             <div class="section-heading">
+
 
                 <div>
 
@@ -270,30 +387,37 @@
                 </div>
 
 
-                <button
+
+                <a
                     class="section-link"
-                    type="button"
-                    data-message="The full AXEN Shop is coming in a future update."
+                    href="shop.html"
                 >
                     View Shop
                     <span>→</span>
-                </button>
+                </a>
 
             </div>
 
 
+
             <div class="product-grid">
 
+
                 <!-- KEYBOARD -->
+
                 <article class="product-card product-wide">
+
 
                     <div class="product-visual keyboard-area">
 
+
                         <div class="keyboard">
+
 
                             <div class="keyboard-brand">
                                 AXEN
                             </div>
+
 
                             <div class="keyboard-keys">
 
@@ -328,29 +452,34 @@
                     </div>
 
 
+
                     <div class="product-info">
+
 
                         <p class="product-status">
                             IN DEVELOPMENT
                         </p>
 
+
                         <h3>
                             AXEN Keyboards
                         </h3>
+
 
                         <p>
                             Precision hardware designed for creation,
                             productivity, and play.
                         </p>
 
-                        <button
-                            type="button"
+
+                        <a
+                            href="shop.html"
                             class="product-link"
-                            data-message="AXEN keyboards are currently in development."
                         >
                             Learn more
                             <span>→</span>
-                        </button>
+                        </a>
+
 
                     </div>
 
@@ -359,9 +488,12 @@
 
 
                 <!-- MERCH -->
+
                 <article class="product-card">
 
+
                     <div class="product-visual merch-area">
+
 
                         <div class="shirt">
 
@@ -374,29 +506,34 @@
                     </div>
 
 
+
                     <div class="product-info">
+
 
                         <p class="product-status">
                             COMING SOON
                         </p>
 
+
                         <h3>
                             AXEN Merch
                         </h3>
+
 
                         <p>
                             Clean AXEN apparel and accessories
                             built around the brand.
                         </p>
 
-                        <button
-                            type="button"
+
+                        <a
+                            href="shop.html"
                             class="product-link"
-                            data-message="AXEN Merch is coming soon."
                         >
                             Explore merch
                             <span>→</span>
-                        </button>
+                        </a>
+
 
                     </div>
 
@@ -408,7 +545,10 @@
 
 
 
-        <!-- AXEN OS -->
+        <!-- =================================
+             AXEN OS
+        ================================== -->
+
         <section
             id="axen-os"
             class="os-section"
@@ -416,15 +556,19 @@
             data-search-keywords="AXEN OS operating system software AXIS"
         >
 
+
             <div class="os-copy">
+
 
                 <p class="section-label section-label-dark">
                     AXEN OS
                 </p>
 
+
                 <h2>
                     Designed around you.
                 </h2>
+
 
                 <p>
                     AXEN OS is being developed as a clean,
@@ -432,6 +576,7 @@
                     everyday computing, creation, and the
                     future AXEN ecosystem.
                 </p>
+
 
 
                 <div class="os-badges">
@@ -447,22 +592,27 @@
                 </div>
 
 
-                <button
-                    type="button"
+
+                <a
+                    href="axen-os.html"
                     class="button button-light"
-                    data-message="The dedicated AXEN OS page is coming soon."
                 >
                     Explore AXEN OS
-                </button>
+                </a>
+
 
             </div>
 
 
+
             <div class="os-preview">
+
 
                 <div class="monitor">
 
+
                     <div class="monitor-screen">
+
 
                         <img
                             src="axen-logo.png"
@@ -470,19 +620,26 @@
                             class="screen-logo"
                         >
 
+
                         <div class="fake-taskbar">
+
 
                             <div class="fake-start">
                                 A
                             </div>
 
+
                             <div class="fake-app"></div>
+
                             <div class="fake-app"></div>
+
                             <div class="fake-app"></div>
+
 
                             <div class="fake-clock">
                                 AXEN OS
                             </div>
+
 
                         </div>
 
@@ -493,6 +650,7 @@
 
                     <div class="monitor-base"></div>
 
+
                 </div>
 
             </div>
@@ -501,29 +659,39 @@
 
 
 
-        <!-- FUTURE -->
+        <!-- =================================
+             TECHNOLOGIES
+        ================================== -->
+
         <section class="section future-section">
 
+
             <div class="center-heading">
+
 
                 <p class="section-label">
                     AXEN TECHNOLOGIES
                 </p>
+
 
                 <h2>
                     One company.
                     Multiple technologies.
                 </h2>
 
+
                 <p>
                     AXEN is being built around hardware,
                     software, and connected experiences.
                 </p>
 
+
             </div>
 
 
+
             <div class="future-grid">
+
 
                 <div class="future-item">
 
@@ -540,6 +708,7 @@
                     </p>
 
                 </div>
+
 
 
                 <div class="future-item">
@@ -559,6 +728,7 @@
                 </div>
 
 
+
                 <div class="future-item">
 
                     <span>
@@ -574,6 +744,7 @@
                     </p>
 
                 </div>
+
 
 
                 <div class="future-item">
@@ -592,13 +763,64 @@
 
                 </div>
 
+
             </div>
 
         </section>
 
 
 
-        <!-- SUPPORT -->
+        <!-- =================================
+             VIRTUAL COMPUTER
+        ================================== -->
+
+        <section
+            class="support-section"
+            data-search-title="AXEN Virtual Computer"
+            data-search-keywords="AXEN Virtual Computer cloud PC subscription remote computing"
+        >
+
+            <div>
+
+
+                <p class="section-label">
+                    AXEN VIRTUAL COMPUTER
+                </p>
+
+
+                <h2>
+                    Your AXEN PC.
+                    Anywhere.
+                </h2>
+
+
+                <p>
+                    Explore AXEN's future subscription cloud PC
+                    experience, designed to bring powerful computing
+                    to supported devices.
+                </p>
+
+
+            </div>
+
+
+
+            <a
+                href="virtual-computer.html"
+                class="button button-black"
+            >
+                Explore Virtual Computer
+            </a>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             SUPPORT
+        ================================== -->
+
         <section
             id="support"
             class="support-section"
@@ -608,35 +830,43 @@
 
             <div>
 
+
                 <p class="section-label">
                     SUPPORT
                 </p>
+
 
                 <h2>
                     AXEN Support.
                 </h2>
 
+
                 <p>
-                    Support services will expand as AXEN
-                    products become available.
+                    Find information about AXEN software,
+                    services, accounts, and future products.
                 </p>
+
 
             </div>
 
 
-            <button
-                type="button"
+
+            <a
+                href="support.html"
                 class="button button-black"
-                data-message="AXEN Support will launch alongside future AXEN products."
             >
                 Visit Support
-            </button>
+            </a>
+
 
         </section>
 
 
 
-        <!-- ABOUT -->
+        <!-- =================================
+             ABOUT
+        ================================== -->
+
         <section
             id="about"
             class="about-section"
@@ -644,25 +874,30 @@
             data-search-keywords="about AXEN Technologies company"
         >
 
+
             <div class="about-brand">
 
                 <img
-                  src="axen-logo.png"
+                    src="axen-logo.png"
                     alt="AXEN"
                 >
 
             </div>
 
 
+
             <div class="about-copy">
+
 
                 <p class="section-label">
                     ABOUT AXEN
                 </p>
 
+
                 <h2>
                     Building the next generation of technology.
                 </h2>
+
 
                 <p>
                     AXEN Technologies is focused on creating
@@ -671,31 +906,56 @@
                     and modern computing.
                 </p>
 
+
                 <p class="development-note">
                     AXEN products are currently in development.
                 </p>
+
+
+                <a
+                    href="about.html"
+                    class="button button-black"
+                >
+                    About AXEN
+                </a>
+
 
             </div>
 
         </section>
 
+
     </main>
 
 
 
-    <!-- FOOTER -->
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
     <footer class="site-footer">
+
 
         <div class="footer-top">
 
-            <img
-              src="axen-logo.png"
-                alt="AXEN"
-                class="footer-logo"
+
+            <a
+                href="index.html"
+                aria-label="AXEN Home"
             >
+
+                <img
+                    src="axen-logo.png"
+                    alt="AXEN"
+                    class="footer-logo"
+                >
+
+            </a>
+
 
 
             <div class="footer-columns">
+
 
                 <div>
 
@@ -703,13 +963,20 @@
                         PRODUCTS
                     </h4>
 
-                   <a href="shop.html">Shop</a>
+                    <a href="shop.html">
+                        Shop
+                    </a>
 
-                    <a href="#axen-os">
+                    <a href="axen-os.html">
                         AXEN OS
                     </a>
 
+                    <a href="virtual-computer.html">
+                        Virtual Computer
+                    </a>
+
                 </div>
+
 
 
                 <div>
@@ -718,30 +985,35 @@
                         COMPANY
                     </h4>
 
-                    <a href="#about">
+                    <a href="about.html">
                         About
                     </a>
 
-                    <a href="#support">
+                    <a href="support.html">
                         Support
                     </a>
 
                 </div>
+
 
             </div>
 
         </div>
 
 
+
         <div class="footer-bottom">
+
 
             <span>
                 © 2026 AXEN Technologies. All rights reserved.
             </span>
 
+
             <span>
                 Products shown may be in development.
             </span>
+
 
         </div>
 
@@ -749,12 +1021,16 @@
 
 
 
-    <!-- CART -->
+    <!-- =====================================
+         CART
+    ====================================== -->
+
     <div
         id="cartBackdrop"
         class="cart-backdrop"
         hidden
     ></div>
+
 
 
     <aside
@@ -763,45 +1039,56 @@
         aria-hidden="true"
     >
 
+
         <div class="cart-header">
+
 
             <h2>
                 Your Cart
             </h2>
 
+
             <button
                 id="closeCart"
                 type="button"
                 class="close-button"
+                aria-label="Close cart"
             >
                 ×
             </button>
 
+
         </div>
 
 
+
         <div class="cart-empty">
+
 
             <div class="cart-symbol">
                 □
             </div>
 
+
             <h3>
                 Your cart is empty.
             </h3>
+
 
             <p>
                 AXEN products will appear here when
                 they become available.
             </p>
 
+
             <a
-                href="#shop"
+                href="shop.html"
                 id="cartShopButton"
                 class="button button-black"
             >
                 Explore AXEN
             </a>
+
 
         </div>
 
@@ -809,12 +1096,16 @@
 
 
 
-    <!-- NOTICE -->
+    <!-- =====================================
+         NOTICE
+    ====================================== -->
+
     <div
         id="noticeModal"
         class="notice-modal"
         hidden
     >
+
 
         <div
             class="notice-card"
@@ -822,27 +1113,33 @@
             aria-modal="true"
         >
 
+
             <button
                 id="closeNotice"
                 type="button"
                 class="close-button notice-close"
+                aria-label="Close"
             >
                 ×
             </button>
 
 
+
             <img
-                src="assets/axen-logo.png"
+                src="axen-logo.png"
                 alt="AXEN"
                 class="notice-logo"
             >
+
 
 
             <h2>
                 AXEN
             </h2>
 
+
             <p id="noticeText"></p>
+
 
 
             <button
@@ -853,12 +1150,16 @@
                 Got it
             </button>
 
+
         </div>
 
     </div>
 
 
+
     <script src="script.js?v=2"></script>
 
+
 </body>
+
 </html>
